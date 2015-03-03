@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayViewController.h"
+#import "RecViewController.h"
+#import "EditViewController.h"
+#import "AddViewController.h"
 
-@interface FileTableViewController : UITableViewController
+@interface FileTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+    IBOutlet UILabel *titleLabel;
+    NSUserDefaults *savedFile;
+    NSString *name[20];
+    NSString *testName;
+}
+
+@property NSMutableArray *rows;
+@property IBOutlet UITableView *tableView;
+@property int fileNumber;
+@property int situation;    //0 = add, 1 = rec, 2 = edit
+
+-(IBAction)cancelButton:(id)sender;
 
 @end

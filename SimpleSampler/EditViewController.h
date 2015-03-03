@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FileTableViewController.h"
+#import "PlayViewController.h"
 
-@interface EditViewController : UIViewController
+@interface EditViewController : UIViewController{
+    IBOutlet UILabel *fileNumberLabel;
+    IBOutlet UITextField *naming;
+    IBOutlet UISwitch *playResetSwitch;
+    NSUserDefaults *savedFile;
+    bool playReset;
+}
+
+
+@property int selectedFileNumber;
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+-(IBAction)SelectFile;
+-(IBAction)save;
+-(IBAction)cancel;
 
 @end

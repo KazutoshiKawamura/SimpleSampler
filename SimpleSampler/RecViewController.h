@@ -7,7 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import "EditViewController.h"
 
-@interface RecViewController : UIViewController
+
+@interface RecViewController : UIViewController <UITextFieldDelegate,AVAudioRecorderDelegate,AVAudioPlayerDelegate>{
+    
+    AVAudioRecorder *avRecorder;
+    AVAudioPlayer *avPlayer[50];
+    int dataNumber;
+    IBOutlet UILabel *label;
+    int buttonCondition;
+    IBOutlet UIButton *btn;
+    int playCount;
+    IBOutlet UITextField *naming;
+    NSString *name;
+    
+}
+@property int selectedFileNumber;
+- (IBAction)recStartAndStop:(id)sender;
+-(IBAction)deleteRec:(id)sender;
+-(IBAction)done:(id)sender;
+-(BOOL)textFieldShouldReturn:(UITextField *)naming;
 
 @end

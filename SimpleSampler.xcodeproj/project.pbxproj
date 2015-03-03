@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C772C0A11AA5CF7400F6C51F /* BJRangeSlider.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C772C09E1AA5CF7400F6C51F /* BJRangeSlider.bundle */; };
+		C772C0A21AA5CF7400F6C51F /* BJRangeSliderWithProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C772C0A01AA5CF7400F6C51F /* BJRangeSliderWithProgress.m */; };
 		C7934B891AA5649100201915 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934B881AA5649100201915 /* main.m */; };
 		C7934B8C1AA5649100201915 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934B8B1AA5649100201915 /* AppDelegate.m */; };
-		C7934B8F1AA5649100201915 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934B8E1AA5649100201915 /* ViewController.m */; };
 		C7934B921AA5649100201915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7934B901AA5649100201915 /* Main.storyboard */; };
 		C7934B941AA5649100201915 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7934B931AA5649100201915 /* Images.xcassets */; };
 		C7934B971AA5649100201915 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7934B951AA5649100201915 /* LaunchScreen.xib */; };
 		C7934BA31AA5649100201915 /* SimpleSamplerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BA21AA5649100201915 /* SimpleSamplerTests.m */; };
+		C7934BAE1AA564BF00201915 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BAD1AA564BF00201915 /* PlayViewController.m */; };
+		C7934BB31AA5667900201915 /* samplerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C7934BAF1AA5667900201915 /* samplerButton.png */; };
+		C7934BB41AA5667900201915 /* RecStartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C7934BB01AA5667900201915 /* RecStartButton.png */; };
+		C7934BB51AA5667900201915 /* RecStopButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C7934BB11AA5667900201915 /* RecStopButton.png */; };
+		C7934BB61AA5667900201915 /* PlayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C7934BB21AA5667900201915 /* PlayButton.png */; };
+		C7934BB81AA566E600201915 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = C7934BB71AA566E600201915 /* burger.png */; };
+		C7934BBB1AA5674100201915 /* RecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BBA1AA5674100201915 /* RecViewController.m */; };
+		C7934BBE1AA567D300201915 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BBD1AA567D300201915 /* AddViewController.m */; };
+		C7934BC11AA567FF00201915 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BC01AA567FF00201915 /* EditViewController.m */; };
+		C7934BC41AA5684A00201915 /* FileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BC31AA5684A00201915 /* FileTableViewController.m */; };
+		C7934BC71AA56DE900201915 /* InitializeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BC61AA56DE900201915 /* InitializeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +39,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C772C09E1AA5CF7400F6C51F /* BJRangeSlider.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BJRangeSlider.bundle; sourceTree = "<group>"; };
+		C772C09F1AA5CF7400F6C51F /* BJRangeSliderWithProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJRangeSliderWithProgress.h; sourceTree = "<group>"; };
+		C772C0A01AA5CF7400F6C51F /* BJRangeSliderWithProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJRangeSliderWithProgress.m; sourceTree = "<group>"; };
 		C7934B831AA5649000201915 /* SimpleSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7934B871AA5649100201915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7934B881AA5649100201915 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C7934B8A1AA5649100201915 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C7934B8B1AA5649100201915 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C7934B8D1AA5649100201915 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C7934B8E1AA5649100201915 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C7934B911AA5649100201915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C7934B931AA5649100201915 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C7934B961AA5649100201915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C7934B9C1AA5649100201915 /* SimpleSamplerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleSamplerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7934BA11AA5649100201915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7934BA21AA5649100201915 /* SimpleSamplerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleSamplerTests.m; sourceTree = "<group>"; };
+		C7934BAC1AA564BF00201915 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		C7934BAD1AA564BF00201915 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		C7934BAF1AA5667900201915 /* samplerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = samplerButton.png; sourceTree = "<group>"; };
+		C7934BB01AA5667900201915 /* RecStartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecStartButton.png; sourceTree = "<group>"; };
+		C7934BB11AA5667900201915 /* RecStopButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecStopButton.png; sourceTree = "<group>"; };
+		C7934BB21AA5667900201915 /* PlayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayButton.png; sourceTree = "<group>"; };
+		C7934BB71AA566E600201915 /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
+		C7934BB91AA5674100201915 /* RecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecViewController.h; sourceTree = "<group>"; };
+		C7934BBA1AA5674100201915 /* RecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecViewController.m; sourceTree = "<group>"; };
+		C7934BBC1AA567D300201915 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		C7934BBD1AA567D300201915 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		C7934BBF1AA567FF00201915 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		C7934BC01AA567FF00201915 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		C7934BC21AA5684A00201915 /* FileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTableViewController.h; sourceTree = "<group>"; };
+		C7934BC31AA5684A00201915 /* FileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTableViewController.m; sourceTree = "<group>"; };
+		C7934BC51AA56DE900201915 /* InitializeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitializeViewController.h; sourceTree = "<group>"; };
+		C7934BC61AA56DE900201915 /* InitializeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitializeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +90,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C772C09D1AA5CF7400F6C51F /* BJRangeSliderWithProgress */ = {
+			isa = PBXGroup;
+			children = (
+				C772C09E1AA5CF7400F6C51F /* BJRangeSlider.bundle */,
+				C772C09F1AA5CF7400F6C51F /* BJRangeSliderWithProgress.h */,
+				C772C0A01AA5CF7400F6C51F /* BJRangeSliderWithProgress.m */,
+			);
+			path = BJRangeSliderWithProgress;
+			sourceTree = "<group>";
+		};
 		C7934B7A1AA5649000201915 = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +121,26 @@
 		C7934B851AA5649000201915 /* SimpleSampler */ = {
 			isa = PBXGroup;
 			children = (
+				C7934BB71AA566E600201915 /* burger.png */,
+				C772C09D1AA5CF7400F6C51F /* BJRangeSliderWithProgress */,
+				C7934BAF1AA5667900201915 /* samplerButton.png */,
+				C7934BB01AA5667900201915 /* RecStartButton.png */,
+				C7934BB11AA5667900201915 /* RecStopButton.png */,
+				C7934BB21AA5667900201915 /* PlayButton.png */,
 				C7934B8A1AA5649100201915 /* AppDelegate.h */,
 				C7934B8B1AA5649100201915 /* AppDelegate.m */,
-				C7934B8D1AA5649100201915 /* ViewController.h */,
-				C7934B8E1AA5649100201915 /* ViewController.m */,
+				C7934BAC1AA564BF00201915 /* PlayViewController.h */,
+				C7934BAD1AA564BF00201915 /* PlayViewController.m */,
+				C7934BB91AA5674100201915 /* RecViewController.h */,
+				C7934BBA1AA5674100201915 /* RecViewController.m */,
+				C7934BBC1AA567D300201915 /* AddViewController.h */,
+				C7934BBD1AA567D300201915 /* AddViewController.m */,
+				C7934BBF1AA567FF00201915 /* EditViewController.h */,
+				C7934BC01AA567FF00201915 /* EditViewController.m */,
+				C7934BC21AA5684A00201915 /* FileTableViewController.h */,
+				C7934BC31AA5684A00201915 /* FileTableViewController.m */,
+				C7934BC51AA56DE900201915 /* InitializeViewController.h */,
+				C7934BC61AA56DE900201915 /* InitializeViewController.m */,
 				C7934B901AA5649100201915 /* Main.storyboard */,
 				C7934B931AA5649100201915 /* Images.xcassets */,
 				C7934B951AA5649100201915 /* LaunchScreen.xib */,
@@ -199,9 +255,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7934BB31AA5667900201915 /* samplerButton.png in Resources */,
 				C7934B921AA5649100201915 /* Main.storyboard in Resources */,
+				C772C0A11AA5CF7400F6C51F /* BJRangeSlider.bundle in Resources */,
+				C7934BB51AA5667900201915 /* RecStopButton.png in Resources */,
 				C7934B971AA5649100201915 /* LaunchScreen.xib in Resources */,
+				C7934BB81AA566E600201915 /* burger.png in Resources */,
 				C7934B941AA5649100201915 /* Images.xcassets in Resources */,
+				C7934BB41AA5667900201915 /* RecStartButton.png in Resources */,
+				C7934BB61AA5667900201915 /* PlayButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7934B8F1AA5649100201915 /* ViewController.m in Sources */,
+				C7934BBE1AA567D300201915 /* AddViewController.m in Sources */,
+				C772C0A21AA5CF7400F6C51F /* BJRangeSliderWithProgress.m in Sources */,
 				C7934B8C1AA5649100201915 /* AppDelegate.m in Sources */,
+				C7934BAE1AA564BF00201915 /* PlayViewController.m in Sources */,
+				C7934BC41AA5684A00201915 /* FileTableViewController.m in Sources */,
 				C7934B891AA5649100201915 /* main.m in Sources */,
+				C7934BC11AA567FF00201915 /* EditViewController.m in Sources */,
+				C7934BC71AA56DE900201915 /* InitializeViewController.m in Sources */,
+				C7934BBB1AA5674100201915 /* RecViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +480,7 @@
 				C7934BA81AA5649100201915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7934BA91AA5649100201915 /* Build configuration list for PBXNativeTarget "SimpleSamplerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +489,7 @@
 				C7934BAB1AA5649100201915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
