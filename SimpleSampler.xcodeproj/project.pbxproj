@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C772C0A11AA5CF7400F6C51F /* BJRangeSlider.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C772C09E1AA5CF7400F6C51F /* BJRangeSlider.bundle */; };
 		C772C0A21AA5CF7400F6C51F /* BJRangeSliderWithProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C772C0A01AA5CF7400F6C51F /* BJRangeSliderWithProgress.m */; };
+		C772C0A61AA5EEAD00F6C51F /* ButtonIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C772C0A51AA5EEAD00F6C51F /* ButtonIcon.png */; };
 		C7934B891AA5649100201915 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934B881AA5649100201915 /* main.m */; };
 		C7934B8C1AA5649100201915 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934B8B1AA5649100201915 /* AppDelegate.m */; };
 		C7934B921AA5649100201915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7934B901AA5649100201915 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		C772C09E1AA5CF7400F6C51F /* BJRangeSlider.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BJRangeSlider.bundle; sourceTree = "<group>"; };
 		C772C09F1AA5CF7400F6C51F /* BJRangeSliderWithProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJRangeSliderWithProgress.h; sourceTree = "<group>"; };
 		C772C0A01AA5CF7400F6C51F /* BJRangeSliderWithProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJRangeSliderWithProgress.m; sourceTree = "<group>"; };
+		C772C0A51AA5EEAD00F6C51F /* ButtonIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonIcon.png; sourceTree = "<group>"; };
 		C7934B831AA5649000201915 /* SimpleSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7934B871AA5649100201915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7934B881AA5649100201915 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				C7934BB01AA5667900201915 /* RecStartButton.png */,
 				C7934BB11AA5667900201915 /* RecStopButton.png */,
 				C7934BB21AA5667900201915 /* PlayButton.png */,
+				C772C0A51AA5EEAD00F6C51F /* ButtonIcon.png */,
 				C7934B8A1AA5649100201915 /* AppDelegate.h */,
 				C7934B8B1AA5649100201915 /* AppDelegate.m */,
 				C7934BAC1AA564BF00201915 /* PlayViewController.h */,
@@ -261,6 +264,7 @@
 				C7934BB51AA5667900201915 /* RecStopButton.png in Resources */,
 				C7934B971AA5649100201915 /* LaunchScreen.xib in Resources */,
 				C7934BB81AA566E600201915 /* burger.png in Resources */,
+				C772C0A61AA5EEAD00F6C51F /* ButtonIcon.png in Resources */,
 				C7934B941AA5649100201915 /* Images.xcassets in Resources */,
 				C7934BB41AA5667900201915 /* RecStartButton.png in Resources */,
 				C7934BB61AA5667900201915 /* PlayButton.png in Resources */,
