@@ -97,16 +97,19 @@
 }
 
 -(IBAction)cancelButton:(id)sender{
-    if (_situation == 0) {
-        PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-        [self presentViewController:playVC animated:YES completion:nil];
-    }else if (_situation == 1) {
-        PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-        [self presentViewController:playVC animated:YES completion:nil];
-    }else if (_situation == 2) {
-        EditViewController *editVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"EditViewController"];
-        [self presentViewController:editVC animated:YES completion:nil];
-    }
+    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+    [self presentViewController:playVC animated:YES completion:nil];
+//    if (_situation == 0) {
+//        PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+//        [self presentViewController:playVC animated:YES completion:nil];
+//    }else if (_situation == 1) {
+//        PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+//        [self presentViewController:playVC animated:YES completion:nil];
+//    }else if (_situation == 2) {
+//        EditViewController *editVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"EditViewController"];
+//        editVC.selectedFileNumber = _selectedFileNumber;
+//        [self presentViewController:editVC animated:YES completion:nil];
+//    }
 }
 
 #pragma mark - Table view Delegate

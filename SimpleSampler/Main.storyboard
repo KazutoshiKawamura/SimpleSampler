@@ -272,7 +272,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Initialize" id="qO2-BR-85D">
                                             <connections>
-                                                <segue destination="azo-l2-TNl" kind="presentation" id="mDN-zl-ALM"/>
+                                                <action selector="initialize" destination="898-wk-SSi" id="aNE-a4-snu"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

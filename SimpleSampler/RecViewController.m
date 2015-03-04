@@ -79,20 +79,6 @@
         
         NSURL *recordingURL = [NSURL fileURLWithPath:path];
         
-        /*
-         
-         NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
-         [NSNumber numberWithFloat: 44100.0], AVSampleRateKey,
-         [NSNumber numberWithInt: kAudioFormatLinearPCM], AVFormatIDKey,
-         [NSNumber numberWithInt: 1], AVNumberOfChannelsKey,
-         [NSNumber numberWithInt:16], AVLinearPCMBitDepthKey,
-         [NSNumber numberWithBool:NO], AVLinearPCMIsBigEndianKey,
-         [NSNumber numberWithBool:NO], AVLinearPCMIsFloatKey,
-         nil];
-         
-         AvRecorder = [[AVAudioRecorder alloc] initWithURL:recordingURL settings:settings error:&error];
-         */
-        
         // 録音中に音量をとる場合はYES
         //    AvRecorder.meteringEnabled = YES;
         
@@ -104,14 +90,12 @@
         }
         avRecorder.delegate=self;
         //    ５秒録音して終了
-            [avRecorder recordForDuration: 10.0];
+//            [avRecorder recordForDuration: 10.0];
         
         [avRecorder record];
         [self timerStart];
         
         buttonCondition = 1;
-        //    UIImage: image = [UIImage imageNamed:@"RecStopButton.png"];
-        //        [button setImage:image forState:UIControlStateNormal];
         
         [btn setImage:[UIImage imageNamed:@"RecStopButton.png"] forState:UIControlStateNormal];
         [self.view addSubview:btn];
@@ -260,7 +244,6 @@
     for (int i = 0; i < 50; i++) {
         [avPlayer[i] stop];
     }
-    
 }
 
 

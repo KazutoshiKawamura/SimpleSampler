@@ -80,13 +80,22 @@
     _endSlider.value = end.text.floatValue;
 }
 
+-(IBAction)initialize{
+    [self reset];
+    FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
+    [self presentViewController:tableVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+}
+
 -(IBAction)SelectFile{
+    [self reset];
     FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
     tableVC.situation = 2;
+    tableVC.selectedFileNumber = _selectedFileNumber;
     [self presentViewController:tableVC animated:YES completion:nil];//YESならModal,Noなら何もなし
 }
 
 -(IBAction)save{
+    [self reset];
     [savedFile setObject:naming.text forKey:[NSString stringWithFormat:@"NAME%d",_selectedFileNumber]];
     PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
     if (playResetSwitch.on == false) {
@@ -100,6 +109,7 @@
 }
 
 -(IBAction)cancel{
+    [self reset];
     PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
     [self presentViewController:playVC animated:YES completion:nil];//YESならModal,Noなら何もなし
 }
@@ -164,7 +174,12 @@
     stopCount++;
 }
 
-
+-(void)reset{
+    [timer invalidate];
+    for (int i = 0; i < 50; i++) {
+        [avPlayer[i] stop];
+    }
+}
 
 
 

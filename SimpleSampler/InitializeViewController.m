@@ -29,6 +29,10 @@
     for (int i = 0; i < 20; i++) {
         [savedFile setObject:@"(No Sound)" forKey:[NSString stringWithFormat:@"NAME%d",i]];
         [savedFile setBool:false forKey:[NSString stringWithFormat:@"PLAY_RESET%d",i]];
+        [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"START_TIME%d",i]];
+        [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"END_TIME%d",i]];
+        [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"FILE_TIME%d",i]];
+        
     }
     for (int i = 0; i < 9; i++) {
         [savedFile setInteger:i forKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];

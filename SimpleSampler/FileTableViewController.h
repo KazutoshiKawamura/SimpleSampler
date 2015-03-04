@@ -19,6 +19,7 @@
     NSString *testName;
 }
 
+@property int selectedFileNumber;
 @property NSMutableArray *rows;
 @property IBOutlet UITableView *tableView;
 @property int fileNumber;

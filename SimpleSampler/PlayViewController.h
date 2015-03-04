@@ -10,9 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "FileTableViewController.h"
 
-@interface PlayViewController : UIViewController{
-    AVAudioPlayer *avPlayer[50];
-    AVAudioPlayer *resetOnPlayer[9];
+@interface PlayViewController : UIViewController <AVAudioRecorderDelegate,AVAudioPlayerDelegate>{
+    AVAudioPlayer *avPlayer[9][50];
+    AVAudioPlayer *resetOnPlayer[9][50];
     //    NSString *labelName[9];
     IBOutlet UILabel *label0;
     IBOutlet UILabel *label1;
@@ -29,8 +29,8 @@
     float endTime[9];
     int playCount;
     int stopCount;
+    int stopCount2;
     int resetCount;
-    int resetCount2;
     NSUserDefaults *savedName;
     NSUserDefaults *savedFile;
     NSTimer *timer;
@@ -51,6 +51,25 @@
 -(IBAction)playButtonAction6;
 -(IBAction)playButtonAction7;
 -(IBAction)playButtonAction8;
--(void)playButtonAction:(int)buttonNumber player:(AVAudioPlayer *)player;
+-(void)playButtonAction:(int)buttonNumber;
+-(void)playEnd0:(NSTimer *)timer;
+-(void)playEnd1:(NSTimer *)timer;
+-(void)playEnd2:(NSTimer *)timer;
+-(void)playEnd3:(NSTimer *)timer;
+-(void)playEnd4:(NSTimer *)timer;
+-(void)playEnd5:(NSTimer *)timer;
+-(void)playEnd6:(NSTimer *)timer;
+-(void)playEnd7:(NSTimer *)timer;
+-(void)playEnd8:(NSTimer *)timer;
+-(void)playEndResetOn0:(NSTimer *)timer;
+-(void)playEndResetOn1:(NSTimer *)timer;
+-(void)playEndResetOn2:(NSTimer *)timer;
+-(void)playEndResetOn3:(NSTimer *)timer;
+-(void)playEndResetOn4:(NSTimer *)timer;
+-(void)playEndResetOn5:(NSTimer *)timer;
+-(void)playEndResetOn6:(NSTimer *)timer;
+-(void)playEndResetOn7:(NSTimer *)timer;
+-(void)playEndResetOn8:(NSTimer *)timer;
+
 
 @end
