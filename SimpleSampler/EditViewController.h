@@ -16,10 +16,16 @@
     IBOutlet UISwitch *playResetSwitch;
     NSUserDefaults *savedFile;
     bool playReset;
+    IBOutlet UISlider *startSlider;
+    IBOutlet UISlider *endSlider;
+    float startTime;
+    float endTime;
+    float fileTime;
 }
 
 
 @property int selectedFileNumber;
+@property float recTime;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 -(IBAction)SelectFile;
 -(IBAction)save;

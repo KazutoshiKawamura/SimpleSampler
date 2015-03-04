@@ -32,6 +32,10 @@
     }else{
         playResetSwitch.on = true;
     }
+    startTime = [savedFile floatForKey:[NSString stringWithFormat:@"START_TIME%d",_selectedFileNumber]];
+    fileTime = [savedFile floatForKey:[NSString stringWithFormat:@"FILE_TIME%d",_selectedFileNumber]];
+    endTime = [savedFile floatForKey:[NSString stringWithFormat:@"END_TIME%d",_selectedFileNumber]];
+    
     
 }
 

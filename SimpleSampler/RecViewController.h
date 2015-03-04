@@ -20,14 +20,21 @@
     int buttonCondition;
     IBOutlet UIButton *btn;
     int playCount;
-    IBOutlet UITextField *naming;
-    NSString *name;
+    NSTimer *timer;
+    NSTimer *timer2;
+    float timerCount;
+    NSString *time;
+    IBOutlet UILabel *timeLabel;
+    float recTime;
+    NSUserDefaults savedFile;
     
 }
 @property int selectedFileNumber;
 - (IBAction)recStartAndStop:(id)sender;
--(IBAction)deleteRec:(id)sender;
+-(IBAction)retryRec:(id)sender;
 -(IBAction)done:(id)sender;
+-(IBAction)cancel;
 -(BOOL)textFieldShouldReturn:(UITextField *)naming;
+-(void)timerStart;
 
 @end

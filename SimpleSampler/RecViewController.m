@@ -21,9 +21,6 @@
     dataNumber = 0;
     buttonCondition = 0;
     playCount = 0;
-    naming.hidden=true;
-    naming.keyboardType = UIKeyboardTypeDefault;
-    naming.delegate=self;
     //    btn = [UIButton buttonWithType:UIButtonTypeCustom];
     //    btn.frame = CGRectMake(0, 0, 150, 150);
     [btn setImage:[UIImage imageNamed:@"RecStartButton.png"] forState:UIControlStateNormal];
@@ -31,6 +28,7 @@
     //    [self.view addSubview:btn];
     
     label.text = [NSString stringWithFormat:@"File No.%d",_selectedFileNumber+1];
+    savedFile = [NSUserDefaults standardUserDefaults];
     
 }
 
@@ -43,6 +41,7 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    
     
     
     
@@ -106,9 +105,10 @@
         }
         avRecorder.delegate=self;
         //    ５秒録音して終了
-        //    [avRecorder recordForDuration: 5.0];
+            [avRecorder recordForDuration: 10.0];
         
         [avRecorder record];
+        [self timerStart];
         
         buttonCondition = 1;
         //    UIImage: image = [UIImage imageNamed:@"RecStopButton.png"];
@@ -116,12 +116,13 @@
         
         [btn setImage:[UIImage imageNamed:@"RecStopButton.png"] forState:UIControlStateNormal];
         [self.view addSubview:btn];
-        
-        
+
         
         
     }else if (buttonCondition == 1){
         [avRecorder stop];
+        [timer invalidate];
+        recTime = timerCount;
         buttonCondition = 2;
         [btn setImage:[UIImage imageNamed:@"PlayButton.png"] forState:UIControlStateNormal];
         [self.view addSubview:btn];
@@ -150,6 +151,17 @@
         if (playCount >= 50) {
             playCount = 0;
         }
+        timerCount = 0;
+        [timer invalidate];
+        [self timerStart];
+        [timer2 invalidate];
+        timer2 = [NSTimer scheduledTimerWithTimeInterval:recTime
+                                                  target:self
+                                                selector:@selector(timerStopWhenPlay)
+                                                userInfo:nil
+                                                 repeats:NO
+                 ];
+        
         
         
     }
@@ -196,15 +208,20 @@
 //    [avPlayer[0] play];
 //}
 
--(IBAction)deleteRec:(id)sender{
+-(IBAction)retryRec:(id)sender{
+    [self reset];
     buttonCondition = 0;
     [btn setImage:[UIImage imageNamed:@"RecStartButton.png"] forState:UIControlStateNormal];
-    naming.hidden=true;
-    naming.text=[NSString stringWithFormat:@""];
+    timerCount = 0.0f;
+    timeLabel.text = @"00.00";
 }
 
 -(IBAction)done:(id)sender{
     if (buttonCondition == 2) {
+        [self reset];
+        [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"START_TIME%d",_selectedFileNumber]];
+        [savedFile setFloat:recTime forKey:[NSString stringWithFormat:@"FILE_TIME%d",_selectedFileNumber]];
+        [savedFile setFloat:recTime forKey:[NSString stringWithFormat:@"END_TIME%d",_selectedFileNumber]];
         EditViewController *editVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"EditViewController"];
         editVC.selectedFileNumber = _selectedFileNumber;
         [self presentViewController:editVC animated:YES completion:nil];
@@ -212,68 +229,40 @@
     
     //    naming.returnKeyType = UIReturnKeyDone;
 }
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    //    name = naming.text;
-    name=naming.text;
-    label.text=name;
-    // キーボードを隠す
-    //        [self.view endEditing:YES];
-    [textField resignFirstResponder];
+
+-(IBAction)cancel{
+    [self reset];
+    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+    [self presentViewController:playVC animated:YES completion:nil];
     
-    NSString *homeDir = NSHomeDirectory();
-    NSString *filePath2 = [homeDir stringByAppendingPathComponent:[NSString stringWithFormat:@"name%d.txt",dataNumber]];
-    // ファイルマネージャを作成
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    // 注意．
-    // ファイルに書き込もうとしたときに該当のファイルが存在しないとエラーになるため
-    // ファイルが存在しない場合は空のファイルを作成する
-    
-    // ファイルが存在しないか?
-    if (![fileManager fileExistsAtPath:filePath2]) { // yes
-        // 空のファイルを作成する
-        BOOL result = [fileManager createFileAtPath:filePath2
-                                           contents:[NSData data] attributes:nil];
-        if (!result) {
-            NSLog(@"ファイルの作成に失敗");
-            //            return;
-        }
+}
+
+-(void)timerStart{
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01
+                                             target:self
+                                           selector:@selector(timer)
+                                           userInfo:nil
+                                            repeats:YES
+             ];
+}
+
+-(void)timer{
+    timerCount = timerCount + 0.01f;
+    timeLabel.text = [NSString stringWithFormat:@"%05.2f",timerCount];
+}
+
+-(void)timerStopWhenPlay{
+    [timer invalidate];
+    timeLabel.text = [NSString stringWithFormat:@"%05.2f",recTime];
+}
+
+-(void)reset{
+    [timer invalidate];
+    [timer2 invalidate];
+    [avRecorder stop];
+    for (int i = 0; i < 50; i++) {
+        [avPlayer[i] stop];
     }
-    
-    // ファイルハンドルを作成する
-    NSFileHandle *fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath2];
-    if (!fileHandle) {
-        NSLog(@"ファイルハンドルの作成に失敗");
-        //        return;
-    }
-    
-    // ファイルに書き込むデータ1を作成
-    NSData *nameData1 = [NSData dataWithBytes:name.UTF8String
-                                       length:name.length];
-    // ファイルに書き込む
-    [fileHandle writeData:nameData1];
-    
-    // 効率化のためにすぐにファイルに書き込まれずキャッシュされることがある．
-    // 「synchronizeFile」メソッドを使用することで
-    // キャッシュされた情報を即座に書き込むことが可能．
-    [fileHandle synchronizeFile];
-    
-    // ファイルを閉じる
-    [fileHandle closeFile];
-    
-    NSLog(@"ファイルの書き込みが完了しました．");
-    
-    NSUserDefaults *savedName = [NSUserDefaults standardUserDefaults];
-    //    [ud setInteger:100 forKey:@"KEY_I"];  // int型の100をKEY_Iというキーで保存
-    [savedName setObject:name forKey:@"NAME"];
-    [savedName setInteger:dataNumber forKey:@"DATA_NUMBER"];
-    [savedName setBool:true forKey:@"ADD_MODE"];
-    
-    
-    
-    
-    
-    return YES;
 }
 
 
