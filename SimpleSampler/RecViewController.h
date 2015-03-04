@@ -15,18 +15,17 @@
     
     AVAudioRecorder *avRecorder;
     AVAudioPlayer *avPlayer[50];
-    int dataNumber;
+    int playCount;
     IBOutlet UILabel *label;
     int buttonCondition;
     IBOutlet UIButton *btn;
-    int playCount;
     NSTimer *timer;
     NSTimer *timer2;
     float timerCount;
     NSString *time;
     IBOutlet UILabel *timeLabel;
     float recTime;
-    NSUserDefaults savedFile;
+    NSUserDefaults *savedFile;
     
 }
 @property int selectedFileNumber;

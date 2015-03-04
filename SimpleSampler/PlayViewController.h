@@ -25,11 +25,15 @@
     IBOutlet UILabel *label8;
     int fileNumberOfButton[9];
     bool playReset[9];
-    int dataNumber;
+    float startTime[9];
+    float endTime[9];
     int playCount;
-    int dataNumberOfButton1;
+    int stopCount;
+    int resetCount;
+    int resetCount2;
     NSUserDefaults *savedName;
     NSUserDefaults *savedFile;
+    NSTimer *timer;
     
 }
 @property int selectedFileNumber;

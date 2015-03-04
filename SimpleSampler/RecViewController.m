@@ -18,7 +18,6 @@
 {
     [super viewDidLoad];
     
-    dataNumber = 0;
     buttonCondition = 0;
     playCount = 0;
     //    btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -137,9 +136,7 @@
         NSArray *filePaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                                  NSUserDomainMask,YES);
         NSString *documentDir = [filePaths objectAtIndex:0];
-        
         NSString *path = [documentDir stringByAppendingPathComponent:[NSString stringWithFormat:@"rec%d.caf",_selectedFileNumber]];
-        
         NSURL *recordingURL = [NSURL fileURLWithPath:path];
         
         avPlayer[playCount] = [[AVAudioPlayer alloc]initWithContentsOfURL:recordingURL error:nil];
@@ -220,8 +217,8 @@
     if (buttonCondition == 2) {
         [self reset];
         [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"START_TIME%d",_selectedFileNumber]];
-        [savedFile setFloat:recTime forKey:[NSString stringWithFormat:@"FILE_TIME%d",_selectedFileNumber]];
         [savedFile setFloat:recTime forKey:[NSString stringWithFormat:@"END_TIME%d",_selectedFileNumber]];
+        [savedFile setFloat:recTime forKey:[NSString stringWithFormat:@"FILE_TIME%d",_selectedFileNumber]];
         EditViewController *editVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"EditViewController"];
         editVC.selectedFileNumber = _selectedFileNumber;
         [self presentViewController:editVC animated:YES completion:nil];
@@ -263,6 +260,7 @@
     for (int i = 0; i < 50; i++) {
         [avPlayer[i] stop];
     }
+    
 }
 
 

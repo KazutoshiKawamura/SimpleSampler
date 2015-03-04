@@ -24,10 +24,16 @@
 //    dataNumber = [savedName integerForKey:@"DATA_NUMBER"];
 //    dataNumberOfButton1 = 0;
     playCount = 0;
+    stopCount = 0;
+    resetCount = 0;
+    resetCount2 = 0;
     
     for (int i = 0; i < 9; i++) {
         fileNumberOfButton[i] = [savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];
         playReset[i] = [savedFile boolForKey:[NSString stringWithFormat:@"PLAY_RESET%d",fileNumberOfButton[i]]];
+        startTime[i] = [savedFile floatForKey:[NSString stringWithFormat:@"START_TIME%d",fileNumberOfButton[i]]];
+        endTime[i] = [savedFile floatForKey:[NSString stringWithFormat:@"END_TIME%d",fileNumberOfButton[i]]];
+        
     }
     
     label0.text = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",fileNumberOfButton[0]]];
@@ -45,29 +51,6 @@
 }
 
 
--(IBAction)button1{
-    
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryAmbient error:nil];
-    
-    
-    // 録音ファイルパス
-    NSArray *filePaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                             NSUserDomainMask,YES);
-    NSString *documentDir = [filePaths objectAtIndex:0];
-    NSString *path = [documentDir stringByAppendingPathComponent:[NSString stringWithFormat:@"rec%d.caf",dataNumber]];
-    NSURL *recordingURL = [NSURL fileURLWithPath:path];
-    
-    avPlayer[playCount] = [[AVAudioPlayer alloc]initWithContentsOfURL:recordingURL error:nil];
-    avPlayer[playCount].delegate = self;
-    avPlayer[playCount].volume=1.0;
-    //        avPlayer[playCount].currentTime = 1.323;
-    [avPlayer[playCount] play];
-    playCount++;
-    if (playCount >= 50) {
-        playCount = 0;
-    }
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -153,6 +136,17 @@
 
 -(void)playButtonAction:(int)buttonNumber{
     
+    if (playReset[buttonNumber] == true) {
+        resetCount = resetCount2;
+        resetCount2 = playCount;
+        [avPlayer[resetCount] stop];
+//        if (resetCount == 0) {
+//            [avPlayer[resetCount] stop];
+//        }else{
+//            [avPlayer[playCount-1] stop];
+//        }
+    }
+    
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryAmbient error:nil];
     
@@ -164,35 +158,28 @@
     NSString *path = [documentDir stringByAppendingPathComponent:[NSString stringWithFormat:@"rec%d.caf",fileNumberOfButton[buttonNumber]]];
     NSURL *recordingURL = [NSURL fileURLWithPath:path];
     
-    if (playReset[buttonNumber] == false) {
-        avPlayer[playCount] = [[AVAudioPlayer alloc]initWithContentsOfURL:recordingURL error:nil];
-        avPlayer[playCount].delegate = self;
-        avPlayer[playCount].volume=1.0;
-        //        avPlayer[playCount].currentTime = 1.323;
-        [avPlayer[playCount] play];
-        playCount++;
-        if (playCount >= 50) {
-            playCount = 0;
-        }
-    }else{
-        resetOnPlayer[buttonNumber] = [[AVAudioPlayer alloc]initWithContentsOfURL:recordingURL error:nil];
-        resetOnPlayer[buttonNumber].delegate = self;
-        resetOnPlayer[buttonNumber].volume=1.0;
-        //        avPlayer[playCount].currentTime = 1.323;
-        [resetOnPlayer[buttonNumber] play];
-
+    avPlayer[playCount] = [[AVAudioPlayer alloc]initWithContentsOfURL:recordingURL error:nil];
+    avPlayer[playCount].delegate = self;
+    avPlayer[playCount].volume=1.0;
+    avPlayer[playCount].currentTime = startTime[fileNumberOfButton[buttonNumber]];
+    [avPlayer[playCount] play];
+    playCount++;
+    if (playCount >= 50) {
+        playCount = 0;
     }
     
+    timer = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[buttonNumber]]-startTime[fileNumberOfButton[buttonNumber]]
+                                             target:self
+                                           selector:@selector(playEnd)
+                                           userInfo:nil
+                                            repeats:NO
+             ];
     
-//    avPlayer[playCount] = [[AVAudioPlayer alloc]initWithContentsOfURL:recordingURL error:nil];
-//    avPlayer[playCount].delegate = self;
-//    avPlayer[playCount].volume=1.0;
-//    //        avPlayer[playCount].currentTime = 1.323;
-//    [avPlayer[playCount] play];
-//    playCount++;
-//    if (playCount >= 50) {
-//        playCount = 0;
-//    }
+}
+
+-(void)playEnd{
+    [avPlayer[stopCount] stop];
+    stopCount++;
 }
 
 
