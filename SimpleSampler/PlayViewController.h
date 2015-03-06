@@ -27,13 +27,12 @@
     bool playReset[9];
     float startTime[9];
     float endTime[9];
-    int playCount;
-    int stopCount;
-    int stopCount2;
-    int resetCount;
-    NSUserDefaults *savedName;
+    int playCount[9];
+    int stopCount[9];
+    int stopCount2[9];
+    int resetCount[9];
     NSUserDefaults *savedFile;
-    NSTimer *timer;
+    NSTimer *timer[9];
     
 }
 @property int selectedFileNumber;

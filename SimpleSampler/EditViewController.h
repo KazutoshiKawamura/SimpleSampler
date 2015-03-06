@@ -10,13 +10,13 @@
 #import <AVFoundation/AVFoundation.h>
 #import "FileTableViewController.h"
 #import "PlayViewController.h"
+#import "InitializeViewController.h"
 
 @interface EditViewController : UIViewController{
     IBOutlet UILabel *fileNumberLabel;
     IBOutlet UITextField *naming;
     IBOutlet UISwitch *playResetSwitch;
     NSUserDefaults *savedFile;
-    bool playReset;
     float startTime;
     float endTime;
     float fileTime;

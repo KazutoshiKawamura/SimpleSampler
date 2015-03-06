@@ -26,7 +26,6 @@
     [playResetSwitch addTarget:self
                   action:@selector(switchValueChanged:)
         forControlEvents:UIControlEventValueChanged];
-//    playResetSwitch.on = false;
     if ([savedFile boolForKey:[NSString stringWithFormat:@"PLAY_RESET%d",_selectedFileNumber]] == false) {
         playResetSwitch.on = false;
     }else{
@@ -82,8 +81,8 @@
 
 -(IBAction)initialize{
     [self reset];
-    FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
-    [self presentViewController:tableVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+    InitializeViewController *initializeVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"InitializeViewController"];
+    [self presentViewController:initializeVC animated:YES completion:nil];//YESならModal,Noなら何もなし
 }
 
 -(IBAction)SelectFile{
@@ -115,10 +114,12 @@
 }
 
 -(IBAction)testPlay{
-    if (playCount == 0) {
-        [avPlayer[49] stop];
-    }else{
-        [avPlayer[playCount-1] stop];
+    if (playResetSwitch.on == true) {
+        if (playCount == 0) {
+            [avPlayer[49] stop];
+        }else{
+            [avPlayer[playCount-1] stop];
+        }
     }
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryAmbient error:nil];
