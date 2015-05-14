@@ -38,7 +38,6 @@
 -(IBAction)retryRec:(id)sender;
 -(IBAction)done:(id)sender;
 -(IBAction)cancel;
--(BOOL)textFieldShouldReturn:(UITextField *)naming;
 -(void)timerStart;
 
 @end

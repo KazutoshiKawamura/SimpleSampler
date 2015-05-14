@@ -278,12 +278,12 @@
                                     <navigationItem title="Edit" id="Am3-hn-R11">
                                         <barButtonItem key="leftBarButtonItem" image="burger.png" id="AsN-q2-QXN">
                                             <connections>
-                                                <action selector="SelectFile" destination="898-wk-SSi" id="hQq-e6-dya"/>
+                                                <action selector="selectFile" destination="898-wk-SSi" id="xoh-9H-yZK"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Delete" id="qO2-BR-85D">
                                             <connections>
-                                                <action selector="delete" destination="898-wk-SSi" id="Ktq-7I-7eU"/>
+                                                <action selector="deleteFile" destination="898-wk-SSi" id="eYl-Kt-2zU"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

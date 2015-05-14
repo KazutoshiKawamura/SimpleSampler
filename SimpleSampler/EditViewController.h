@@ -35,8 +35,8 @@
 @property (weak, nonatomic) IBOutlet UISlider *endSlider;
 @property int selectedFileNumber;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
--(IBAction)initialize;
--(IBAction)SelectFile;
+-(IBAction)deleteFile;
+-(IBAction)selectFile;
 -(IBAction)save;
 -(IBAction)cancel;
 -(IBAction)testPlay;

@@ -86,14 +86,14 @@
     _endSlider.value = end.text.floatValue;
 }
 
--(IBAction)delete{
+-(IBAction)deleteFile{
     [self reset];
     InitializeViewController *deleteVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"DeleteViewController"];
     deleteVC.selectedFileNumber = _selectedFileNumber;
     [self presentViewController:deleteVC animated:YES completion:nil];//YESならModal,Noなら何もなし
 }
 
--(IBAction)SelectFile{
+-(IBAction)selectFile{
     [self reset];
     FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
     tableVC.situation = 2;
@@ -187,6 +187,9 @@
 -(void)playEnd{
     [avPlayer[stopCount] stop];
     stopCount++;
+    if (stopCount >= 50) {
+        stopCount = 0;
+    }
 }
 
 -(void)reset{

@@ -259,12 +259,12 @@
                                     <navigationItem title="Edit" id="n7I-pc-Zyi">
                                         <barButtonItem key="leftBarButtonItem" image="burger.png" id="j8X-h4-b8n">
                                             <connections>
-                                                <action selector="SelectFile" destination="Sft-CR-Rp0" id="S5a-YL-I5m"/>
+                                                <action selector="selectFile" destination="Sft-CR-Rp0" id="Jf2-1t-tyk"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Delete" id="spb-5u-58f">
                                             <connections>
-                                                <action selector="delete" destination="Sft-CR-Rp0" id="2OY-pt-IgO"/>
+                                                <action selector="deleteFile" destination="Sft-CR-Rp0" id="TAT-dz-Nd0"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -801,7 +801,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Delete" id="7Ni-8U-ROJ">
-                                        <barButtonItem key="rightBarButtonItem" title="Delete All" id="wbR-Na-bFc">
+                                        <barButtonItem key="rightBarButtonItem" title="Delete all" id="wbR-Na-bFc">
                                             <connections>
                                                 <segue destination="Avs-dc-4aQ" kind="modal" id="k9b-Hp-W1o"/>
                                             </connections>
@@ -867,6 +867,6 @@
         <image name="samplerButton.png" width="341" height="342"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Acp-CU-Ehi"/>
+        <segue reference="8SX-ha-AyQ"/>
     </inferredMetricsTieBreakers>
 </document>
