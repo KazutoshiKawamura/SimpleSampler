@@ -20,7 +20,12 @@
     savedFile = [NSUserDefaults standardUserDefaults];
     for (int i = 0; i < 9; i++) {
         fileNumberOfButton[i]=[savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];
+        
+        if ([savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]] == nil) {
+            fileNumberOfButton[i] = i;
+        }
     }
+    
     
     label0.text = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",fileNumberOfButton[0]]];
     label1.text = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",fileNumberOfButton[1]]];

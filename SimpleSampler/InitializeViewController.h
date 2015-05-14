@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "PlayViewController.h"
 
-@interface InitializeViewController : UIViewController{
-    
+@interface InitializeViewController : UIViewController<AVAudioRecorderDelegate>{
+    AVAudioRecorder *avRecorder;
+    IBOutlet UILabel *label;
 }
 
--(IBAction)yes;
+@property int selectedFileNumber;
+
+-(IBAction)yesDeleteAll;
+-(IBAction)yesDelete;
 
 @end

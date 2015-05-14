@@ -24,16 +24,25 @@
 //    dataNumber = [savedName integerForKey:@"DATA_NUMBER"];
 //    dataNumberOfButton1 = 0;
     
+    for (int i = 0; i < 20; i++) {
+        if ([savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",i]] == nil) {
+            [savedFile setObject:@"(No Sound)" forKey:[NSString stringWithFormat:@"NAME%d",i]];
+        }
+        
+    }
+    
     for (int i = 0; i < 9; i++) {
         playCount[i] = 0;
         stopCount[i] = 0;
         stopCount2[i] = 0;
         resetCount[i] = 0;
         fileNumberOfButton[i] = [savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];
+        if ([savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]] == nil) {
+            fileNumberOfButton[i] = i;
+        }
         playReset[i] = [savedFile boolForKey:[NSString stringWithFormat:@"PLAY_RESET%d",fileNumberOfButton[i]]];
         startTime[i] = [savedFile floatForKey:[NSString stringWithFormat:@"START_TIME%d",fileNumberOfButton[i]]];
         endTime[i] = [savedFile floatForKey:[NSString stringWithFormat:@"END_TIME%d",fileNumberOfButton[i]]];
-        
     }
     
     label0.text = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",fileNumberOfButton[0]]];

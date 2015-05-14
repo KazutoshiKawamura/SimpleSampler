@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C75C15801AA7626F00967250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75C157F1AA7626F00967250 /* Main.storyboard */; };
+		C770D35B1AFF3FC4001E7E1A /* Main3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C770D35A1AFF3FC4001E7E1A /* Main3.storyboard */; };
 		C772C0A11AA5CF7400F6C51F /* BJRangeSlider.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C772C09E1AA5CF7400F6C51F /* BJRangeSlider.bundle */; };
 		C772C0A21AA5CF7400F6C51F /* BJRangeSliderWithProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C772C0A01AA5CF7400F6C51F /* BJRangeSliderWithProgress.m */; };
 		C772C0A61AA5EEAD00F6C51F /* ButtonIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C772C0A51AA5EEAD00F6C51F /* ButtonIcon.png */; };
+		C78627B51AFF27A20087930B /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C78627B41AFF27A20087930B /* Main2.storyboard */; };
 		C7934B891AA5649100201915 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934B881AA5649100201915 /* main.m */; };
 		C7934B8C1AA5649100201915 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934B8B1AA5649100201915 /* AppDelegate.m */; };
 		C7934B941AA5649100201915 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7934B931AA5649100201915 /* Images.xcassets */; };
@@ -27,6 +29,9 @@
 		C7934BC11AA567FF00201915 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BC01AA567FF00201915 /* EditViewController.m */; };
 		C7934BC41AA5684A00201915 /* FileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BC31AA5684A00201915 /* FileTableViewController.m */; };
 		C7934BC71AA56DE900201915 /* InitializeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7934BC61AA56DE900201915 /* InitializeViewController.m */; };
+		C7D8685D1AD66A55009B43DC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D8685A1AD66A55009B43DC /* Default-568h@2x.png */; };
+		C7D8685E1AD66A55009B43DC /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D8685B1AD66A55009B43DC /* Default-667h@2x.png */; };
+		C7D8685F1AD66A55009B43DC /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D8685C1AD66A55009B43DC /* Default-736h@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +46,12 @@
 
 /* Begin PBXFileReference section */
 		C75C157F1AA7626F00967250 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C770D35A1AFF3FC4001E7E1A /* Main3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main3.storyboard; sourceTree = "<group>"; };
 		C772C09E1AA5CF7400F6C51F /* BJRangeSlider.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BJRangeSlider.bundle; sourceTree = "<group>"; };
 		C772C09F1AA5CF7400F6C51F /* BJRangeSliderWithProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJRangeSliderWithProgress.h; sourceTree = "<group>"; };
 		C772C0A01AA5CF7400F6C51F /* BJRangeSliderWithProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJRangeSliderWithProgress.m; sourceTree = "<group>"; };
 		C772C0A51AA5EEAD00F6C51F /* ButtonIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonIcon.png; sourceTree = "<group>"; };
+		C78627B41AFF27A20087930B /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 		C7934B831AA5649000201915 /* SimpleSampler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSampler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7934B871AA5649100201915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7934B881AA5649100201915 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +79,9 @@
 		C7934BC31AA5684A00201915 /* FileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTableViewController.m; sourceTree = "<group>"; };
 		C7934BC51AA56DE900201915 /* InitializeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitializeViewController.h; sourceTree = "<group>"; };
 		C7934BC61AA56DE900201915 /* InitializeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitializeViewController.m; sourceTree = "<group>"; };
+		C7D8685A1AD66A55009B43DC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C7D8685B1AD66A55009B43DC /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
+		C7D8685C1AD66A55009B43DC /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +155,8 @@
 				C7934BC51AA56DE900201915 /* InitializeViewController.h */,
 				C7934BC61AA56DE900201915 /* InitializeViewController.m */,
 				C75C157F1AA7626F00967250 /* Main.storyboard */,
+				C78627B41AFF27A20087930B /* Main2.storyboard */,
+				C770D35A1AFF3FC4001E7E1A /* Main3.storyboard */,
 				C7934B931AA5649100201915 /* Images.xcassets */,
 				C7934B951AA5649100201915 /* LaunchScreen.xib */,
 				C7934B861AA5649100201915 /* Supporting Files */,
@@ -155,6 +167,7 @@
 		C7934B861AA5649100201915 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7D868591AD66A55009B43DC /* Defaults */,
 				C7934B871AA5649100201915 /* Info.plist */,
 				C7934B881AA5649100201915 /* main.m */,
 			);
@@ -176,6 +189,16 @@
 				C7934BA11AA5649100201915 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7D868591AD66A55009B43DC /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				C7D8685A1AD66A55009B43DC /* Default-568h@2x.png */,
+				C7D8685B1AD66A55009B43DC /* Default-667h@2x.png */,
+				C7D8685C1AD66A55009B43DC /* Default-736h@3x.png */,
+			);
+			path = Defaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +250,7 @@
 				TargetAttributes = {
 					C7934B821AA5649000201915 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = Y8XE99ZXF4;
 					};
 					C7934B9B1AA5649100201915 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -259,8 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7934BB31AA5667900201915 /* samplerButton.png in Resources */,
+				C7D8685E1AD66A55009B43DC /* Default-667h@2x.png in Resources */,
+				C78627B51AFF27A20087930B /* Main2.storyboard in Resources */,
+				C7D8685D1AD66A55009B43DC /* Default-568h@2x.png in Resources */,
 				C772C0A11AA5CF7400F6C51F /* BJRangeSlider.bundle in Resources */,
 				C7934BB51AA5667900201915 /* RecStopButton.png in Resources */,
+				C770D35B1AFF3FC4001E7E1A /* Main3.storyboard in Resources */,
+				C7D8685F1AD66A55009B43DC /* Default-736h@3x.png in Resources */,
 				C7934B971AA5649100201915 /* LaunchScreen.xib in Resources */,
 				C75C15801AA7626F00967250 /* Main.storyboard in Resources */,
 				C7934BB81AA566E600201915 /* burger.png in Resources */,
@@ -407,9 +436,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kazutoshi Kawamura (4F3T74PHBM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kazutoshi Kawamura (4F3T74PHBM)";
 				INFOPLIST_FILE = SimpleSampler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -417,9 +451,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kazutoshi Kawamura (4F3T74PHBM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kazutoshi Kawamura (4F3T74PHBM)";
 				INFOPLIST_FILE = SimpleSampler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

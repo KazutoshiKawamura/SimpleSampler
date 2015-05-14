@@ -18,14 +18,17 @@
 {
     [super viewDidLoad];
     
+    aD = [[AppDelegate alloc]init];
     buttonCondition = 0;
     playCount = 0;
     //    btn = [UIButton buttonWithType:UIButtonTypeCustom];
     //    btn.frame = CGRectMake(0, 0, 150, 150);
-    [btn setImage:[UIImage imageNamed:@"RecStartButton.png"] forState:UIControlStateNormal];
+    if (aD.is_iPad) {
+        
+    }
+    [btn setBackgroundImage:[UIImage imageNamed:@"RecStartButton.png"] forState:UIControlStateNormal];
     //    [self.view addSubview:btn];
     //    [self.view addSubview:btn];
-    
     label.text = [NSString stringWithFormat:@"File No.%d",_selectedFileNumber+1];
     savedFile = [NSUserDefaults standardUserDefaults];
     
@@ -40,10 +43,6 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    
-    
-    
-    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -75,6 +74,8 @@
                                                                  NSUserDomainMask,YES);
         NSString *documentDir = [filePaths objectAtIndex:0];
         
+        NSLog(documentDir);
+        
         NSString *path = [documentDir stringByAppendingPathComponent:[NSString stringWithFormat:@"rec%d.caf",_selectedFileNumber]];
         
         NSURL *recordingURL = [NSURL fileURLWithPath:path];
@@ -90,16 +91,16 @@
         }
         avRecorder.delegate=self;
         //    ５秒録音して終了
-//            [avRecorder recordForDuration: 10.0];
+        //            [avRecorder recordForDuration: 10.0];
         
         [avRecorder record];
         [self timerStart];
         
         buttonCondition = 1;
         
-        [btn setImage:[UIImage imageNamed:@"RecStopButton.png"] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageNamed:@"RecStopButton.png"] forState:UIControlStateNormal];
         [self.view addSubview:btn];
-
+        
         
         
     }else if (buttonCondition == 1){
@@ -107,9 +108,10 @@
         [timer invalidate];
         recTime = timerCount;
         buttonCondition = 2;
-        [btn setImage:[UIImage imageNamed:@"PlayButton.png"] forState:UIControlStateNormal];
+        [savedFile setObject:@"New Sound" forKey:[NSString stringWithFormat:@"NAME%d",_selectedFileNumber]];
+        [btn setBackgroundImage:[UIImage imageNamed:@"PlayButton.png"] forState:UIControlStateNormal];
         [self.view addSubview:btn];
-//        naming.hidden=false;
+        //        naming.hidden=false;
     }else if (buttonCondition == 2){
         
         AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -127,8 +129,9 @@
         avPlayer[playCount].delegate = self;
         avPlayer[playCount].volume=1.0;
         //        avPlayer[playCount].currentTime = 1.323;
+        
         [avPlayer[playCount] play];
-        playCount++;
+//        playCount++;
         if (playCount >= 50) {
             playCount = 0;
         }
@@ -141,7 +144,7 @@
                                                 selector:@selector(timerStopWhenPlay)
                                                 userInfo:nil
                                                  repeats:NO
-                 ];
+                  ];
         
         
         
@@ -192,9 +195,11 @@
 -(IBAction)retryRec:(id)sender{
     [self reset];
     buttonCondition = 0;
-    [btn setImage:[UIImage imageNamed:@"RecStartButton.png"] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"RecStartButton.png"] forState:UIControlStateNormal];
     timerCount = 0.0f;
     timeLabel.text = @"00.00";
+    [avRecorder stop];
+    [avRecorder deleteRecording];
 }
 
 -(IBAction)done:(id)sender{
@@ -228,8 +233,24 @@
 }
 
 -(void)timer{
-    timerCount = timerCount + 0.01f;
-    timeLabel.text = [NSString stringWithFormat:@"%05.2f",timerCount];
+    if (timerCount >= 59.99f) {
+        [avRecorder stop];
+        [timer invalidate];
+        recTime = timerCount;
+        buttonCondition = 2;
+        [savedFile setObject:@"New Sound" forKey:[NSString stringWithFormat:@"NAME%d",_selectedFileNumber]];
+        [btn setImage:[UIImage imageNamed:@"PlayButton.png"] forState:UIControlStateNormal];
+        [self.view addSubview:btn];
+        timeLabel.text = [NSString stringWithFormat:@"%05.2f",timerCount];
+    }else{
+        if (avRecorder.recording) {
+            timerCount = [avRecorder currentTime];
+        }else{
+            timerCount = timerCount + 0.01f;
+        }
+        timeLabel.text = [NSString stringWithFormat:@"%05.2f",timerCount];
+    }
+    
 }
 
 -(void)timerStopWhenPlay{

@@ -79,10 +79,11 @@
     _endSlider.value = end.text.floatValue;
 }
 
--(IBAction)initialize{
+-(IBAction)delete{
     [self reset];
-    InitializeViewController *initializeVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"InitializeViewController"];
-    [self presentViewController:initializeVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+    InitializeViewController *deleteVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"DeleteViewController"];
+    deleteVC.selectedFileNumber = _selectedFileNumber;
+    [self presentViewController:deleteVC animated:YES completion:nil];//YESならModal,Noなら何もなし
 }
 
 -(IBAction)SelectFile{
@@ -161,11 +162,17 @@
 }
 
 -(void)didStartValueChanged:( UISlider *)slider{
+    if (slider.value >= endTime) {
+        slider.value = endTime;
+    }
     startTime = slider.value;
     start.text = [NSString stringWithFormat:@"%05.2f",startTime];
 }
 
 -(void)didEndValueChanged:( UISlider *)slider{
+    if (slider.value <= startTime) {
+        slider.value = startTime;
+    }
     endTime = slider.value;
     end.text = [NSString stringWithFormat:@"%05.2f",endTime];
 }

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "EditViewController.h"
+#import "AppDelegate.h"
 
 
 @interface RecViewController : UIViewController <UITextFieldDelegate,AVAudioRecorderDelegate,AVAudioPlayerDelegate>{
@@ -26,6 +27,8 @@
     IBOutlet UILabel *timeLabel;
     float recTime;
     NSUserDefaults *savedFile;
+    bool renewalCheck;
+    AppDelegate *aD;
     
 }
 @property int selectedFileNumber;

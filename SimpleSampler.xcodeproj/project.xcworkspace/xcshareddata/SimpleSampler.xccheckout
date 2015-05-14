@@ -10,6 +10,8 @@
 	<string>SimpleSampler</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>57C435B8AE248A05CEAB4FBFE011489309925674</key>
+		<string>https://github.com/KazutoshiKawamura/SimpleSampler.git</string>
 		<key>C98D5D754AB273B911A4ED8696418D14890F21EE</key>
 		<string>https://github.com/KazutoshiKawamura/SimpleSampler.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>SimpleSampler.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>57C435B8AE248A05CEAB4FBFE011489309925674</key>
+		<string>../../..</string>
 		<key>C98D5D754AB273B911A4ED8696418D14890F21EE</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>C98D5D754AB273B911A4ED8696418D14890F21EE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>57C435B8AE248A05CEAB4FBFE011489309925674</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
