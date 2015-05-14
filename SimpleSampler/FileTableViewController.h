@@ -11,6 +11,7 @@
 #import "RecViewController.h"
 #import "EditViewController.h"
 #import "AddViewController.h"
+@import GoogleMobileAds;
 
 @interface FileTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     IBOutlet UILabel *titleLabel;
@@ -19,6 +20,7 @@
     NSString *testName;
 }
 
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 @property int selectedFileNumber;
 @property NSMutableArray *rows;
 @property IBOutlet UITableView *tableView;

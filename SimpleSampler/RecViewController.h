@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "EditViewController.h"
 #import "AppDelegate.h"
+@import GoogleMobileAds;
 
 
 @interface RecViewController : UIViewController <UITextFieldDelegate,AVAudioRecorderDelegate,AVAudioPlayerDelegate>{
@@ -31,6 +32,7 @@
     AppDelegate *aD;
     
 }
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 @property int selectedFileNumber;
 - (IBAction)recStartAndStop:(id)sender;
 -(IBAction)retryRec:(id)sender;

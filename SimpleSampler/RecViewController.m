@@ -18,17 +18,16 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"Google Mobile Ads SDK version: %@", [GADRequest sdkVersion]);
+    self.bannerView.adUnitID = @"ca-app-pub-1376424253937363/2978674733";
+    self.bannerView.rootViewController = self;
+    GADBannerView *bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
+    [self.bannerView loadRequest:[GADRequest request]];
+    
     aD = [[AppDelegate alloc]init];
     buttonCondition = 0;
     playCount = 0;
-    //    btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    btn.frame = CGRectMake(0, 0, 150, 150);
-    if (aD.is_iPad) {
-        
-    }
     [btn setBackgroundImage:[UIImage imageNamed:@"RecStartButton.png"] forState:UIControlStateNormal];
-    //    [self.view addSubview:btn];
-    //    [self.view addSubview:btn];
     label.text = [NSString stringWithFormat:@"File No.%d",_selectedFileNumber+1];
     savedFile = [NSUserDefaults standardUserDefaults];
     

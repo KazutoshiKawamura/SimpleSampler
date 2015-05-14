@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "PlayViewController.h"
+@import GoogleMobileAds;
 
 @interface InitializeViewController : UIViewController<AVAudioRecorderDelegate>{
     AVAudioRecorder *avRecorder;
     IBOutlet UILabel *label;
 }
 
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 @property int selectedFileNumber;
 
 -(IBAction)yesDeleteAll;

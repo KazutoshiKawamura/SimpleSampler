@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PlayViewController.h"
+@import GoogleMobileAds;
 
 @interface AddViewController : UIViewController{
     IBOutlet UILabel *label0;
@@ -23,6 +24,7 @@
     NSUserDefaults *savedFile;
 }
 
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 @property int selectedFileNumber;
 -(IBAction)cancel;
 -(IBAction)addButtonAction0;

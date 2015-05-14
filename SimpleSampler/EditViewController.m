@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSLog(@"Google Mobile Ads SDK version: %@", [GADRequest sdkVersion]);
+    self.bannerView.adUnitID = @"ca-app-pub-1376424253937363/2978674733";
+    self.bannerView.rootViewController = self;
+    GADBannerView *bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
+    [self.bannerView loadRequest:[GADRequest request]];
+    
     savedFile = [NSUserDefaults standardUserDefaults];
     naming.keyboardType = UIKeyboardTypeDefault;
     naming.returnKeyType = UIReturnKeyDone;

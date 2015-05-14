@@ -11,6 +11,7 @@
 #import "FileTableViewController.h"
 #import "PlayViewController.h"
 #import "InitializeViewController.h"
+@import GoogleMobileAds;
 
 @interface EditViewController : UIViewController{
     IBOutlet UILabel *fileNumberLabel;
@@ -28,6 +29,7 @@
     NSTimer *timer;
 }
 
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @property (weak, nonatomic) IBOutlet UISlider *startSlider;
 @property (weak, nonatomic) IBOutlet UISlider *endSlider;

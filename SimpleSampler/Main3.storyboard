@@ -233,6 +233,13 @@
                                 <rect key="frame" x="475" y="666" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IDw-cF-GaV">
+                                <rect key="frame" x="402" y="165" width="122" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.18000658929999999" green="0.93003402219999998" blue="0.47001719359999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uG3-AB-wy0">
                                 <rect key="frame" x="66" y="316" width="160" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -339,19 +346,18 @@
                                 </items>
                                 <color key="barTintColor" red="0.73251638100000005" green="0.72023957120000004" blue="0.68750141170000001" alpha="1" colorSpace="deviceRGB"/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IDw-cF-GaV">
-                                <rect key="frame" x="402" y="165" width="122" height="42"/>
+                            <view contentMode="scaleToFill" id="Met-1F-yHb" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="890" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" red="0.18000658929999999" green="0.93003402219999998" blue="0.47001719359999999" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23921570180000001" green="0.20000001789999999" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="DgD-nh-Bii"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="bannerView" destination="Met-1F-yHb" id="bJz-8B-DwU"/>
                         <outlet property="end" destination="frE-VE-OHF" id="1ct-1k-eTF"/>
                         <outlet property="endSlider" destination="4h6-uJ-i1q" id="wUR-Dh-ATK"/>
                         <outlet property="fileNumberLabel" destination="dS1-I7-GOM" id="CJq-aT-4DG"/>
@@ -394,6 +400,13 @@
                                 <color key="textColor" red="0.18000658929999999" green="0.93003402219999998" blue="0.47001719359999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File No.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vTj-FS-i6h">
+                                <rect key="frame" x="297" y="128" width="174" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.18000658929999999" green="0.93003402219999998" blue="0.47001719359999999" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="NU3-ZR-nQa">
                                 <rect key="frame" x="0.0" y="980" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -422,18 +435,17 @@
                                     <action selector="recStartAndStop:" destination="Ip5-k0-gEK" eventType="touchUpInside" id="gxD-wY-CSC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File No.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vTj-FS-i6h">
-                                <rect key="frame" x="297" y="128" width="174" height="47"/>
+                            <view contentMode="scaleToFill" id="vLo-kS-DAE" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="890" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" red="0.18000658929999999" green="0.93003402219999998" blue="0.47001719359999999" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.2387577444" green="0.21242016550000001" blue="0.226186946" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="bannerView" destination="vLo-kS-DAE" id="zXh-Hd-nZk"/>
                         <outlet property="btn" destination="rXo-kz-OlM" id="VSi-ku-iuW"/>
                         <outlet property="label" destination="vTj-FS-i6h" id="NOs-OG-MiM"/>
                         <outlet property="timeLabel" destination="FlN-am-oEv" id="dfX-NS-tcp"/>
@@ -472,15 +484,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="agG-hq-lws">
-                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="64" width="768" height="871"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view contentMode="scaleToFill" id="Ibx-q6-JFZ" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="934" width="768" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23921570180000001" green="0.20000001789999999" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="bannerView" destination="Ibx-q6-JFZ" id="6ji-9K-v5B"/>
                         <outlet property="tableView" destination="agG-hq-lws" id="PQn-Ru-6gO"/>
                         <outlet property="titleLabel" destination="ahA-Cs-RDE" id="prt-cq-VV6"/>
                     </connections>
@@ -728,11 +746,17 @@
                                     <action selector="addButtonAction4" destination="GL1-kf-QkQ" eventType="touchUpInside" id="OnI-pU-tBw"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="Gc5-zK-XZA" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="890" width="768" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23921570180000001" green="0.20000001789999999" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="bannerView" destination="Gc5-zK-XZA" id="fTy-ek-7oZ"/>
                         <outlet property="label0" destination="NtN-qq-xMc" id="qs0-6H-p4B"/>
                         <outlet property="label1" destination="F7p-0U-QtD" id="Z7h-vk-DgG"/>
                         <outlet property="label2" destination="DTJ-Rd-aCZ" id="x2t-Cr-WwY"/>
@@ -804,11 +828,19 @@
                                 <items/>
                                 <color key="barTintColor" red="0.73251638100000005" green="0.72023957120000004" blue="0.68750141170000001" alpha="1" colorSpace="deviceRGB"/>
                             </toolbar>
+                            <view contentMode="scaleToFill" id="Spn-Cx-wOx" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="890" width="768" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23921570180000001" green="0.20000001789999999" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="bBw-fG-wgS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="bannerView" destination="Spn-Cx-wOx" id="P3S-HT-Z9n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUJ-x1-trb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -846,6 +878,17 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BPv-QT-SkP">
+                                <rect key="frame" x="408" y="399" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="YES">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="yesDelete" destination="B1q-s1-kCd" eventType="touchUpInside" id="ygm-P7-O1I"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File No.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Mx-iQ-JTv">
                                 <rect key="frame" x="295" y="263" width="178" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -870,22 +913,17 @@
                                     <segue destination="fq1-oz-jca" kind="modal" id="HGB-9D-Jn2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BPv-QT-SkP">
-                                <rect key="frame" x="408" y="399" width="65" height="65"/>
+                            <view contentMode="scaleToFill" id="PxD-2f-sR5" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="890" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="YES">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="yesDelete" destination="B1q-s1-kCd" eventType="touchUpInside" id="ygm-P7-O1I"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23921570180000001" green="0.20000001789999999" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="bannerView" destination="PxD-2f-sR5" id="ghG-4V-tps"/>
                         <outlet property="label" destination="4Mx-iQ-JTv" id="HcL-BW-NDz"/>
                     </connections>
                 </viewController>

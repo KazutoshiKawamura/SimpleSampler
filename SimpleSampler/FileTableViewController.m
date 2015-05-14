@@ -35,6 +35,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"Google Mobile Ads SDK version: %@", [GADRequest sdkVersion]);
+    self.bannerView.adUnitID = @"ca-app-pub-1376424253937363/2978674733";
+    self.bannerView.rootViewController = self;
+    GADBannerView *bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
+    [self.bannerView loadRequest:[GADRequest request]];
     
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:_STCellId];
     _tableView.delegate = self;
