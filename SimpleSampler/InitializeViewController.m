@@ -42,16 +42,16 @@
         [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"FILE_TIME%d",i]];
         
         
-        [self recFileDlelete:i];
+        [self recFileDelete:i];
         
     }
     for (int i = 0; i < 9; i++) {
         [savedFile setInteger:i forKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];
     }
     
-    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-    [self presentViewController:playVC animated:YES completion:nil];
-    
+//    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+//    [self presentViewController:playVC animated:YES completion:nil];
+    [self.presentingViewController.presentingViewController.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(IBAction)yesDelete{
@@ -62,14 +62,15 @@
     [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"END_TIME%d",_selectedFileNumber]];
     [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"FILE_TIME%d",_selectedFileNumber]];
     
-    [self recFileDlelete:_selectedFileNumber];
+    [self recFileDelete:_selectedFileNumber];
     
-    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-    [self presentViewController:playVC animated:YES completion:nil];
+//    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+//    [self presentViewController:playVC animated:YES completion:nil];
+    [self.presentingViewController.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
--(void)recFileDlelete:(int)i {
+-(void)recFileDelete:(int)i {
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     NSError *error = nil;
     // 使用している機種が録音に対応しているか
@@ -101,6 +102,14 @@
     [avRecorder record];
     [avRecorder stop];
     [avRecorder deleteRecording];
+}
+
+-(IBAction)cancelDelete:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(IBAction)cancelDeleteAll:(id)sender {
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 

@@ -24,11 +24,17 @@
 //    dataNumber = [savedName integerForKey:@"DATA_NUMBER"];
 //    dataNumberOfButton1 = 0;
     
+    if ([savedFile boolForKey:@"isNotFirstRun"] == false) {
+        for (int i = 0; i < 9; i++) {
+            [savedFile setInteger:i forKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];
+        }
+        [savedFile setBool:true forKey:@"isNotFirstRun"];
+    }
+    
     for (int i = 0; i < 20; i++) {
         if ([savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",i]] == nil) {
             [savedFile setObject:@"(No Sound)" forKey:[NSString stringWithFormat:@"NAME%d",i]];
         }
-        
     }
     
     for (int i = 0; i < 9; i++) {
@@ -37,9 +43,9 @@
         stopCount2[i] = 0;
         resetCount[i] = 0;
         fileNumberOfButton[i] = [savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];
-        if ([savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]] == nil) {
-            fileNumberOfButton[i] = i;
-        }
+//        if ([savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]] == nil) {
+//            fileNumberOfButton[i] = i;
+//        }
         playReset[i] = [savedFile boolForKey:[NSString stringWithFormat:@"PLAY_RESET%d",fileNumberOfButton[i]]];
         startTime[i] = [savedFile floatForKey:[NSString stringWithFormat:@"START_TIME%d",fileNumberOfButton[i]]];
         endTime[i] = [savedFile floatForKey:[NSString stringWithFormat:@"END_TIME%d",fileNumberOfButton[i]]];
@@ -57,6 +63,10 @@
     
 
     //    _situation = 0;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
 }
 
 
@@ -88,9 +98,11 @@
 -(IBAction)add{
     [self reset];
     FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
+//    FileTableViewController *tableVC = [[FileTableViewController alloc] init];
     tableVC.situation = 0;
     [self presentViewController:tableVC animated:YES completion:nil];//YESならModal,Noなら何もなし
-    //    [self performSegueWithIdentifier:@"toFileTableViewController" sender:self];
+//    [self performSegueWithIdentifier:@"toFileTableViewController" sender:self];
+//    [self.navigationController pushViewController:tableVC animated:YES];
 }
 
 -(IBAction)edit{

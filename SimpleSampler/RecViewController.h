@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "EditViewController.h"
+#import "FileTableViewController.h"
 #import "AppDelegate.h"
 @import GoogleMobileAds;
+
+@class RecViewController;
+
+@protocol RecViewDelegate <NSObject>
+
+- (void)recViewDidChanged:(RecViewController*)viewController;
+
+@end
 
 
 @interface RecViewController : UIViewController <UITextFieldDelegate,AVAudioRecorderDelegate,AVAudioPlayerDelegate>{
@@ -21,6 +30,7 @@
     IBOutlet UILabel *label;
     int buttonCondition;
     IBOutlet UIButton *btn;
+    IBOutlet UIButton *backButton;
     NSTimer *timer;
     NSTimer *timer2;
     float timerCount;
@@ -32,6 +42,7 @@
     AppDelegate *aD;
     
 }
+@property(weak, nonatomic) id<RecViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 @property int selectedFileNumber;
 - (IBAction)recStartAndStop:(id)sender;

@@ -28,7 +28,7 @@
     for (int i = 0; i < 9; i++) {
         fileNumberOfButton[i]=[savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];
         
-        if ([savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]] == nil) {
+        if ([savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]] == i) {
             fileNumberOfButton[i] = i;
         }
     }
@@ -52,8 +52,7 @@
 
 
 -(IBAction)cancel{
-    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-    [self presentViewController:playVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
@@ -95,9 +94,9 @@
 
 
 -(void)addButtonAction:(int)buttonNumber{
+    savedFile = [NSUserDefaults standardUserDefaults];
     [savedFile setInteger:_selectedFileNumber forKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",buttonNumber]];
-    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-    [self presentViewController:playVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
     
 }
 

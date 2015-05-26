@@ -13,6 +13,14 @@
 #import "InitializeViewController.h"
 @import GoogleMobileAds;
 
+@class EditViewController;
+
+@protocol EditViewDelegate <NSObject>
+
+- (void)editViewDidChanged:(EditViewController*)viewController;
+
+@end
+
 @interface EditViewController : UIViewController{
     IBOutlet UILabel *fileNumberLabel;
     IBOutlet UITextField *naming;
@@ -29,11 +37,14 @@
     NSTimer *timer;
 }
 
+@property(weak, nonatomic) id<EditViewDelegate> delegate;
+
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @property (weak, nonatomic) IBOutlet UISlider *startSlider;
 @property (weak, nonatomic) IBOutlet UISlider *endSlider;
 @property int selectedFileNumber;
+@property bool fromRec;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 -(IBAction)deleteFile;
 -(IBAction)selectFile;

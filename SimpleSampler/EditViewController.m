@@ -13,6 +13,7 @@
 @end
 
 @implementation EditViewController
+@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,10 +96,14 @@
 
 -(IBAction)selectFile{
     [self reset];
-    FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
-    tableVC.situation = 2;
-    tableVC.selectedFileNumber = _selectedFileNumber;
-    [self presentViewController:tableVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+//    FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
+//    tableVC.situation = 2;
+//    tableVC.selectedFileNumber = _selectedFileNumber;
+    if ( [self.delegate respondsToSelector:@selector(editViewDidChanged:)] ) {
+        [self.delegate editViewDidChanged:self];
+    }
+//    [self presentViewController:tableVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(IBAction)save{
@@ -112,13 +117,24 @@
     }
     [savedFile setFloat:startTime forKey:[NSString stringWithFormat:@"START_TIME%d",_selectedFileNumber]];
     [savedFile setFloat:endTime forKey:[NSString stringWithFormat:@"END_TIME%d",_selectedFileNumber]];
-    [self presentViewController:playVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+    if ( [self.delegate respondsToSelector:@selector(editViewDidChanged:)] ) {
+        [self.delegate editViewDidChanged:self];
+    }
+//    [self presentViewController:playVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(IBAction)cancel{
     [self reset];
-    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-    [self presentViewController:playVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+//    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+//    [self presentViewController:playVC animated:YES completion:nil];//YESならModal,Noなら何もなし
+//    [self.navigationController popToViewController:playVC animated:YES];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
+    if ( [self.delegate respondsToSelector:@selector(editViewDidChanged:)] ) {
+        [self.delegate editViewDidChanged:self];
+    }
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(IBAction)testPlay{

@@ -383,13 +383,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.73251638100000005" green="0.72023957120000004" blue="0.68750141170000001" alpha="1" colorSpace="deviceRGB"/>
                                 <items>
-                                    <navigationItem title="Rec" id="2j9-es-PeE">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="dGi-jF-J8E">
-                                            <connections>
-                                                <action selector="cancel" destination="wB9-G4-q2d" id="2mT-c0-zQN"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Rec" id="2j9-es-PeE"/>
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="NCX-fx-ohM">
@@ -439,11 +433,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0bA-vP-wNs">
+                                <rect key="frame" x="0.0" y="20" width="53" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel" destination="wB9-G4-q2d" eventType="touchUpInside" id="WGR-Mi-iIA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23875774443149567" green="0.21242016553878784" blue="0.22618694603443146" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="backButton" destination="0bA-vP-wNs" id="a4X-lA-3A7"/>
                         <outlet property="bannerView" destination="9ln-IU-eJz" id="a6N-8w-Jgk"/>
                         <outlet property="btn" destination="UW0-HV-gRD" id="eI4-EY-Zno"/>
                         <outlet property="label" destination="Zbo-7b-bcE" id="VFV-SF-Gks"/>
@@ -525,8 +531,7 @@
                                     <navigationItem title="Add" id="cC0-SZ-ZFU">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dXJ-oj-hgI">
                                             <connections>
-                                                <action selector="cancel" destination="GH7-k9-Oyc" id="X7B-Pq-VF0"/>
-                                                <segue destination="vXZ-lx-hvc" kind="modal" id="Kct-3M-Tli"/>
+                                                <action selector="cancel" destination="GH7-k9-Oyc" id="3PF-OU-DQP"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -746,7 +751,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="RjE-0x-uWF" customClass="GADBannerView">
-                                <rect key="frame" x="1" y="474" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="474" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -822,7 +827,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="j4J-U8-W8k"/>
+                                    <action selector="cancelDeleteAll:" destination="azo-l2-TNl" eventType="touchUpInside" id="8mX-cG-cyf"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="asI-04-uBD" customClass="GADBannerView">
@@ -898,7 +903,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="5w3-vU-Ryu"/>
+                                    <action selector="cancelDelete:" destination="frN-do-8Sa" eventType="touchUpInside" id="bYf-sK-3Zy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File No.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VsO-rL-BuA">
@@ -936,7 +941,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="j4J-U8-W8k"/>
-    </inferredMetricsTieBreakers>
 </document>

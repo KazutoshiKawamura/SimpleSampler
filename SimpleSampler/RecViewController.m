@@ -13,6 +13,8 @@
 @end
 
 @implementation RecViewController
+@synthesize delegate;
+
 
 - (void)viewDidLoad
 {
@@ -99,6 +101,7 @@
         
         [btn setBackgroundImage:[UIImage imageNamed:@"RecStopButton.png"] forState:UIControlStateNormal];
         [self.view addSubview:btn];
+        backButton.hidden = true;
         
         
         
@@ -130,7 +133,7 @@
         //        avPlayer[playCount].currentTime = 1.323;
         
         [avPlayer[playCount] play];
-//        playCount++;
+        //        playCount++;
         if (playCount >= 50) {
             playCount = 0;
         }
@@ -202,24 +205,28 @@
 }
 
 -(IBAction)done:(id)sender{
-    if (buttonCondition == 2) {
+    if (backButton.hidden && buttonCondition != 1) {
         [self reset];
         [savedFile setFloat:0.0f forKey:[NSString stringWithFormat:@"START_TIME%d",_selectedFileNumber]];
         [savedFile setFloat:recTime forKey:[NSString stringWithFormat:@"END_TIME%d",_selectedFileNumber]];
         [savedFile setFloat:recTime forKey:[NSString stringWithFormat:@"FILE_TIME%d",_selectedFileNumber]];
         EditViewController *editVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"EditViewController"];
         editVC.selectedFileNumber = _selectedFileNumber;
-        [self presentViewController:editVC animated:YES completion:nil];
+//                editVC.fromRec = true;
+        if ( [self.delegate respondsToSelector:@selector(recViewDidChanged:)] ) {
+            [self.delegate recViewDidChanged:self];
+        }
+//                FileTableViewController *tableVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"FileTableViewController"];
+//                tableVC.situation = 3;
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+//                [self presentViewController:editVC animated:YES completion:nil];
     }
-    
-    //    naming.returnKeyType = UIReturnKeyDone;
+//        naming.returnKeyType = UIReturnKeyDone;
 }
 
 -(IBAction)cancel{
     [self reset];
-    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-    [self presentViewController:playVC animated:YES completion:nil];
-    
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(void)timerStart{
