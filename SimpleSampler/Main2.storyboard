@@ -249,7 +249,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="testPlay" destination="Sft-CR-Rp0" eventType="touchUpInside" id="sGW-XS-Sq0"/>
+                                    <action selector="testPlay" destination="Sft-CR-Rp0" eventType="touchDown" id="nbO-ke-Bi5"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cWV-ON-aqB">
@@ -293,7 +293,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L6Z-4B-fX2">
-                                <rect key="frame" x="207" y="96" width="97" height="30"/>
+                                <rect key="frame" x="207" y="96" width="90" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -329,7 +329,7 @@
                     <navigationItem key="navigationItem" id="jUm-mj-cZe"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="bannerView" destination="DmX-bl-197" id="54U-Fe-HgX"/>
+                        <outlet property="bannerView" destination="DmX-bl-197" id="Ku7-1O-xmE"/>
                         <outlet property="end" destination="ZsS-k2-LBq" id="EiB-Cz-b8T"/>
                         <outlet property="endSlider" destination="V9L-cy-Piz" id="zcq-Oj-kVw"/>
                         <outlet property="fileNumberLabel" destination="ESx-ct-QwV" id="RfE-YM-SLA"/>
@@ -383,6 +383,20 @@
                                 <color key="textColor" red="0.18000658929999999" green="0.93003402219999998" blue="0.47001719359999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mm-pN-WNO" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="386" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-sM-zeb">
+                                <rect key="frame" x="0.0" y="20" width="53" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel" destination="2yJ-eR-Pgq" eventType="touchUpInside" id="1aU-Hm-Tyy"/>
+                                </connections>
+                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vO7-aS-W1b">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
@@ -400,26 +414,13 @@
                                 </items>
                                 <color key="barTintColor" red="0.73251638100000005" green="0.72023957120000004" blue="0.68750141170000001" alpha="1" colorSpace="deviceRGB"/>
                             </toolbar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mm-pN-WNO" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="386" width="320" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-sM-zeb">
-                                <rect key="frame" x="0.0" y="20" width="53" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancel" destination="2yJ-eR-Pgq" eventType="touchUpInside" id="1aU-Hm-Tyy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2387577444" green="0.21242016550000001" blue="0.226186946" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="bannerView" destination="4mm-pN-WNO" id="DyN-8y-3Ib"/>
+                        <outlet property="backButton" destination="ZT1-sM-zeb" id="8cY-c5-WyW"/>
+                        <outlet property="bannerView" destination="4mm-pN-WNO" id="82N-nf-KKa"/>
                         <outlet property="btn" destination="AUx-IE-Ytc" id="JrJ-3d-lQW"/>
                         <outlet property="label" destination="z6C-um-Ra7" id="LrG-jx-MvN"/>
                         <outlet property="timeLabel" destination="wrE-3m-EmV" id="DG9-82-c4k"/>

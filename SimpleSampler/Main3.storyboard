@@ -268,7 +268,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="testPlay" destination="EUz-Jv-E8J" eventType="touchUpInside" id="afI-Pt-8Vp"/>
+                                    <action selector="testPlay" destination="EUz-Jv-E8J" eventType="touchDown" id="Qdg-IX-1HP"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" id="YwO-Hf-n5z">
@@ -357,7 +357,7 @@
                     <navigationItem key="navigationItem" id="DgD-nh-Bii"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <outlet property="bannerView" destination="Met-1F-yHb" id="bJz-8B-DwU"/>
+                        <outlet property="bannerView" destination="Met-1F-yHb" id="2AJ-Le-E7k"/>
                         <outlet property="end" destination="frE-VE-OHF" id="1ct-1k-eTF"/>
                         <outlet property="endSlider" destination="4h6-uJ-i1q" id="wUR-Dh-ATK"/>
                         <outlet property="fileNumberLabel" destination="dS1-I7-GOM" id="CJq-aT-4DG"/>
@@ -450,7 +450,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <outlet property="bannerView" destination="vLo-kS-DAE" id="zXh-Hd-nZk"/>
+                        <outlet property="backButton" destination="eCv-Bu-9iN" id="wCg-tM-TCc"/>
+                        <outlet property="bannerView" destination="vLo-kS-DAE" id="gyv-oy-YI0"/>
                         <outlet property="btn" destination="rXo-kz-OlM" id="VSi-ku-iuW"/>
                         <outlet property="label" destination="vTj-FS-i6h" id="NOs-OG-MiM"/>
                         <outlet property="timeLabel" destination="FlN-am-oEv" id="dfX-NS-tcp"/>

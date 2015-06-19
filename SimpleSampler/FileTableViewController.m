@@ -51,9 +51,9 @@
     for (int i = 0; i < 20; i++) {
         name[i] = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",i]];
     }
-//    testName = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",0]];
+    //    testName = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",0]];
     
-
+    
     
     
     if (_situation == 0) {
@@ -114,32 +114,32 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
-//    cell.textLabel.text = [NSString stringWithFormat:@"%d.", indexPath.row + 1]; // 何番目のセルかを表示させました
-//    cell.textLabel.text =
-//    for (int i = 0; i < 20; i++) {
-//        cell.textLabel.text = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",i]];
-//    }
+    //    cell.textLabel.text = [NSString stringWithFormat:@"%d.", indexPath.row + 1]; // 何番目のセルかを表示させました
+    //    cell.textLabel.text =
+    //    for (int i = 0; i < 20; i++) {
+    //        cell.textLabel.text = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",i]];
+    //    }
     cell.textLabel.text = [NSString stringWithFormat:@"%d.%@", indexPath.row + 1,name[indexPath.row]];
-//    [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",indexPath.row]];
-
+    //    [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",indexPath.row]];
+    
     return cell;
 }
 
 -(IBAction)cancelButton:(id)sender{
     [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
-//    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-//    [self presentViewController:playVC animated:YES completion:nil];
-//    if (_situation == 0) {
-//        PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-//        [self presentViewController:playVC animated:YES completion:nil];
-//    }else if (_situation == 1) {
-//        PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
-//        [self presentViewController:playVC animated:YES completion:nil];
-//    }else if (_situation == 2) {
-//        EditViewController *editVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"EditViewController"];
-//        editVC.selectedFileNumber = _selectedFileNumber;
-//        [self presentViewController:editVC animated:YES completion:nil];
-//    }
+    //    PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+    //    [self presentViewController:playVC animated:YES completion:nil];
+    //    if (_situation == 0) {
+    //        PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+    //        [self presentViewController:playVC animated:YES completion:nil];
+    //    }else if (_situation == 1) {
+    //        PlayViewController *playVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+    //        [self presentViewController:playVC animated:YES completion:nil];
+    //    }else if (_situation == 2) {
+    //        EditViewController *editVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"EditViewController"];
+    //        editVC.selectedFileNumber = _selectedFileNumber;
+    //        [self presentViewController:editVC animated:YES completion:nil];
+    //    }
 }
 
 #pragma mark - Table view Delegate
@@ -150,12 +150,12 @@
         AddViewController *addVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"AddViewController"];
         addVC.selectedFileNumber = indexPath.row;
         [self presentViewController:addVC animated:YES completion:nil];
-//        [self.navigationController pushViewController:addVC animated:YES];
+        //        [self.navigationController pushViewController:addVC animated:YES];
     }else if (_situation == 1) {
         RecViewController *recVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"RecViewController"];
         recVC.selectedFileNumber = indexPath.row;
         recVC.delegate = (id<RecViewDelegate>)self;
-[self presentViewController:recVC animated:YES completion:nil];
+        [self presentViewController:recVC animated:YES completion:nil];
     }else if (_situation == 2) {
         EditViewController *editVC =  [self.storyboard instantiateViewControllerWithIdentifier:@"EditViewController"];
         editVC.selectedFileNumber = indexPath.row;

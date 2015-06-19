@@ -43,12 +43,17 @@
         stopCount2[i] = 0;
         resetCount[i] = 0;
         fileNumberOfButton[i] = [savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]];
+        NSLog(@"fileNumberOfButton[%d] is %d", i, fileNumberOfButton[i]);
 //        if ([savedFile integerForKey:[NSString stringWithFormat:@"FILE_NUMBER_OF_BUTTON%d",i]] == nil) {
 //            fileNumberOfButton[i] = i;
 //        }
         playReset[i] = [savedFile boolForKey:[NSString stringWithFormat:@"PLAY_RESET%d",fileNumberOfButton[i]]];
         startTime[i] = [savedFile floatForKey:[NSString stringWithFormat:@"START_TIME%d",fileNumberOfButton[i]]];
         endTime[i] = [savedFile floatForKey:[NSString stringWithFormat:@"END_TIME%d",fileNumberOfButton[i]]];
+        
+        NSLog(@"playReset[%d] is %d", i, playReset[i]);
+        NSLog(@"startTime[%d] is %f", i, startTime[i]);
+        NSLog(@"endTime[%d] is %f", i, endTime[i]);
     }
     
     label0.text = [savedFile stringForKey:[NSString stringWithFormat:@"NAME%d",fileNumberOfButton[0]]];
@@ -118,14 +123,14 @@
     [self playButtonAction:0];
     
     if (playReset[0] == false) {
-        timer[0] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[0]]-startTime[fileNumberOfButton[0]]
+        timer[0] = [NSTimer scheduledTimerWithTimeInterval:endTime[0]-startTime[0]
                                                  target:self
                                                selector:@selector(playEnd0:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[0] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[0]]-startTime[fileNumberOfButton[0]]
+        timer[0] = [NSTimer scheduledTimerWithTimeInterval:endTime[0]-startTime[0]
                                                  target:self
                                                selector:@selector(playEndResetOn0:)
                                                userInfo:nil
@@ -138,14 +143,14 @@
 -(IBAction)playButtonAction1{
     [self playButtonAction:1];
     if (playReset[1] == false) {
-        timer[1] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[1]]-startTime[fileNumberOfButton[1]]
+        timer[1] = [NSTimer scheduledTimerWithTimeInterval:endTime[1]-startTime[1]
                                                  target:self
                                                selector:@selector(playEnd1:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[1] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[1]]-startTime[fileNumberOfButton[1]]
+        timer[1] = [NSTimer scheduledTimerWithTimeInterval:endTime[1]-startTime[1]
                                                  target:self
                                                selector:@selector(playEndResetOn1:)
                                                userInfo:nil
@@ -156,15 +161,16 @@
 
 -(IBAction)playButtonAction2{
     [self playButtonAction:2];
+    float testTime = endTime[2]-startTime[2];
     if (playReset[2] == false) {
-        timer[2] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[2]]-startTime[fileNumberOfButton[2]]
+        timer[2] = [NSTimer scheduledTimerWithTimeInterval:endTime[2]-startTime[2]
                                                  target:self
                                                selector:@selector(playEnd2:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[2] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[2]]-startTime[fileNumberOfButton[2]]
+        timer[2] = [NSTimer scheduledTimerWithTimeInterval:endTime[2]-startTime[2]
                                                  target:self
                                                selector:@selector(playEndResetOn2:)
                                                userInfo:nil
@@ -177,14 +183,14 @@
 -(IBAction)playButtonAction3{
     [self playButtonAction:3];
     if (playReset[3] == false) {
-        timer[3] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[3]]-startTime[fileNumberOfButton[3]]
+        timer[3] = [NSTimer scheduledTimerWithTimeInterval:endTime[3]-startTime[3]
                                                  target:self
                                                selector:@selector(playEnd3:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[3] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[3]]-startTime[fileNumberOfButton[3]]
+        timer[3] = [NSTimer scheduledTimerWithTimeInterval:endTime[3]-startTime[3]
                                                  target:self
                                                selector:@selector(playEndResetOn3:)
                                                userInfo:nil
@@ -197,14 +203,14 @@
 -(IBAction)playButtonAction4{
     [self playButtonAction:4];
     if (playReset[4] == false) {
-        timer[4] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[4]]-startTime[fileNumberOfButton[4]]
+        timer[4] = [NSTimer scheduledTimerWithTimeInterval:endTime[4]-startTime[4]
                                                  target:self
                                                selector:@selector(playEnd4:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[4] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[4]]-startTime[fileNumberOfButton[4]]
+        timer[4] = [NSTimer scheduledTimerWithTimeInterval:endTime[4]-startTime[4]
                                                  target:self
                                                selector:@selector(playEndResetOn4:)
                                                userInfo:nil
@@ -217,14 +223,14 @@
 -(IBAction)playButtonAction5{
     [self playButtonAction:5];
     if (playReset[5] == false) {
-        timer[5] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[5]]-startTime[fileNumberOfButton[5]]
+        timer[5] = [NSTimer scheduledTimerWithTimeInterval:endTime[5]-startTime[5]
                                                  target:self
                                                selector:@selector(playEnd5:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[5] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[5]]-startTime[fileNumberOfButton[5]]
+        timer[5] = [NSTimer scheduledTimerWithTimeInterval:endTime[5]-startTime[5]
                                                  target:self
                                                selector:@selector(playEndResetOn5:)
                                                userInfo:nil
@@ -237,14 +243,14 @@
 -(IBAction)playButtonAction6{
     [self playButtonAction:6];
     if (playReset[6] == false) {
-        timer[6] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[6]]-startTime[fileNumberOfButton[6]]
+        timer[6] = [NSTimer scheduledTimerWithTimeInterval:endTime[6]-startTime[6]
                                                  target:self
                                                selector:@selector(playEnd6:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[6] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[6]]-startTime[fileNumberOfButton[6]]
+        timer[6] = [NSTimer scheduledTimerWithTimeInterval:endTime[6]-startTime[6]
                                                  target:self
                                                selector:@selector(playEndResetOn6:)
                                                userInfo:nil
@@ -257,14 +263,14 @@
 -(IBAction)playButtonAction7{
     [self playButtonAction:7];
     if (playReset[7] == false) {
-        timer[7] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[7]]-startTime[fileNumberOfButton[7]]
+        timer[7] = [NSTimer scheduledTimerWithTimeInterval:endTime[7]-startTime[7]
                                                  target:self
                                                selector:@selector(playEnd7:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[7] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[7]]-startTime[fileNumberOfButton[7]]
+        timer[7] = [NSTimer scheduledTimerWithTimeInterval:endTime[7]-startTime[7]
                                                  target:self
                                                selector:@selector(playEndResetOn7:)
                                                userInfo:nil
@@ -277,14 +283,14 @@
 -(IBAction)playButtonAction8{
     [self playButtonAction:8];
     if (playReset[8] == false) {
-        timer[8] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[8]]-startTime[fileNumberOfButton[8]]
+        timer[8] = [NSTimer scheduledTimerWithTimeInterval:endTime[8]-startTime[8]
                                                  target:self
                                                selector:@selector(playEnd8:)
                                                userInfo:nil
                                                 repeats:NO
                  ];
     }else{
-        timer[8] = [NSTimer scheduledTimerWithTimeInterval:endTime[fileNumberOfButton[8]]-startTime[fileNumberOfButton[8]]
+        timer[8] = [NSTimer scheduledTimerWithTimeInterval:endTime[8]-startTime[8]
                                                  target:self
                                                selector:@selector(playEndResetOn8:)
                                                userInfo:nil
@@ -297,7 +303,11 @@
 -(void)playButtonAction:(int)buttonNumber{
     
     if (playReset[buttonNumber] == true) {
-        [resetOnPlayer[buttonNumber][resetCount[buttonNumber]-1] stop];
+        if (resetCount[buttonNumber] == 0) {
+            [resetOnPlayer[buttonNumber][49] stop];
+        }else{
+            [resetOnPlayer[buttonNumber][resetCount[buttonNumber]-1] stop];
+        }
     }
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -315,7 +325,7 @@
         avPlayer[buttonNumber][playCount[buttonNumber]] = [[AVAudioPlayer alloc]initWithContentsOfURL:recordingURL error:nil];
         avPlayer[buttonNumber][playCount[buttonNumber]].delegate = self;
         avPlayer[buttonNumber][playCount[buttonNumber]].volume=1.0;
-        avPlayer[buttonNumber][playCount[buttonNumber]].currentTime = startTime[fileNumberOfButton[buttonNumber]];
+        avPlayer[buttonNumber][playCount[buttonNumber]].currentTime = startTime[buttonNumber];
         [avPlayer[buttonNumber][playCount[buttonNumber]] play];
         playCount[buttonNumber]++;
         if (playCount[buttonNumber] >= 50) {
@@ -331,7 +341,7 @@
         resetOnPlayer[buttonNumber][resetCount[buttonNumber]] = [[AVAudioPlayer alloc]initWithContentsOfURL:recordingURL error:nil];
         resetOnPlayer[buttonNumber][resetCount[buttonNumber]].delegate = self;
         resetOnPlayer[buttonNumber][resetCount[buttonNumber]].volume=1.0;
-        resetOnPlayer[buttonNumber][resetCount[buttonNumber]].currentTime = startTime[fileNumberOfButton[buttonNumber]];
+        resetOnPlayer[buttonNumber][resetCount[buttonNumber]].currentTime = startTime[buttonNumber];
         [resetOnPlayer[buttonNumber][resetCount[buttonNumber]] play];
         resetCount[buttonNumber]++;
         if (resetCount[buttonNumber] >= 50) {

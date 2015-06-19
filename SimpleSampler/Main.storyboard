@@ -267,7 +267,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="testPlay" destination="898-wk-SSi" eventType="touchUpInside" id="PKY-ou-38h"/>
+                                    <action selector="testPlay" destination="898-wk-SSi" eventType="touchDown" id="dxE-EG-UYZ"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" id="86t-RN-xZS">
@@ -333,8 +333,8 @@
                                 <color key="textColor" red="0.18000658929999999" green="0.93003402219999998" blue="0.47001719359999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="a1y-IZ-ylp">
-                                <rect key="frame" x="207" y="107" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="New Sound" borderStyle="roundedRect" minimumFontSize="17" id="a1y-IZ-ylp">
+                                <rect key="frame" x="207" y="107" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -356,7 +356,7 @@
                     <navigationItem key="navigationItem" id="0xq-gh-Fwv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="bannerView" destination="MwW-4K-JuN" id="959-Ny-h5l"/>
+                        <outlet property="bannerView" destination="MwW-4K-JuN" id="3sJ-nY-2E0"/>
                         <outlet property="end" destination="V2l-Ho-oND" id="I7X-rr-9Nk"/>
                         <outlet property="endSlider" destination="HoN-25-AiE" id="dkT-Jr-xyj"/>
                         <outlet property="fileNumberLabel" destination="542-He-YpQ" id="frv-ga-iZD"/>
@@ -450,7 +450,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backButton" destination="0bA-vP-wNs" id="a4X-lA-3A7"/>
-                        <outlet property="bannerView" destination="9ln-IU-eJz" id="a6N-8w-Jgk"/>
+                        <outlet property="bannerView" destination="9ln-IU-eJz" id="yuZ-Hl-mFf"/>
                         <outlet property="btn" destination="UW0-HV-gRD" id="eI4-EY-Zno"/>
                         <outlet property="label" destination="Zbo-7b-bcE" id="VFV-SF-Gks"/>
                         <outlet property="timeLabel" destination="XJw-gb-b6M" id="pAB-aN-xHf"/>
